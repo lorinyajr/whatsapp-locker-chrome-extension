@@ -155,7 +155,7 @@ submitButton.addEventListener("click", function (event) {
     var password = passwordInput.value;
     var user = document.getElementById("user").value;
 
-    if (password !== "Mbeyialorinya" || user !== "admin") {
+    if (password !== "1234567890" || user !== "admin") {
         // Display error message if password is incorrect
         errorLabel.style.display = "block";
     }
