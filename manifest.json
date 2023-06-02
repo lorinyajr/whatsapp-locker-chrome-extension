@@ -5,12 +5,18 @@
   "name": "zack protect",
   "description": "WhatsApp locker extension is a Chrome extension that allows you to secure your WhatsApp Web account with a password. With this extension, you can prevent unauthorized access to your WhatsApp messages and media files. Simply install the extension on your Chrome browser, set a password, and activate it on the WhatsApp Web page. Keep your conversations private and secure with Whatsapp locker extension!",
   "version": "1.0",
-  "permissions": ["scripting","unlimitedStorage"],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": ["scripting","unlimitedStorage","tabs"],
   "host_permissions": ["https://web.whatsapp.com/*"],
   "content_scripts": [
     {
-      "matches": ["https://web.whatsapp.com/"],
-      "js": ["content.js"]
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js","script/sha256.js"]
     }
   ],
   "icons": {
